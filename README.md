@@ -12,6 +12,16 @@ if the PAYONE module is not used and should be removed from the shop installatio
     `composer require d3/oxid-payone-replacement --update-no-dev`
     
 * Manually remove the files from source/modules/fc/fcpayone.
+* OXID eShop 6.2 only:
+
+    ```
+    composer require -n oxid-esales/oxideshop-update-component oxid-esales/developer-tools --update-no-dev
+    vendor/bin/oe-console oe:module:reset-configurations
+    vendor/bin/oe-console oe:oxideshop-update-component:install-all-modules
+    composer remove -n oxid-esales/oxideshop-update-component oxid-esales/developer-tools --update-no-dev
+    ```
+    
+    Please ignore "not readable file" message.
 
 ## Uninstall
 
